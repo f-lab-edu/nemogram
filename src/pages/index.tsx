@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { PuzzleCardListData } from "@/types/puzzleCardTypes";
+import PuzzleCardList from "@/components/PuzzleCardList";
 
 const puzzleCardListData: PuzzleCardListData = [
   {
@@ -45,7 +46,9 @@ export default function Home() {
       <Head>
         <title>Nemograms</title>
       </Head>
-      <div>바디</div>
+      <div>
+        <PuzzleCardList listData={puzzleCardListData} />
+      </div>
     </>
   );
 }
