@@ -1,13 +1,13 @@
-import { PuzzleCardListData } from "@/types/puzzleCardTypes";
+import { Puzzle } from "@/types/puzzle";
 import PuzzleCard from "@/components/PuzzleCard";
 
 export default function PuzzleCardList({
-  listData,
-}: Readonly<{ listData: PuzzleCardListData }>) {
+  puzzles,
+}: Readonly<{ puzzles: Puzzle[] }>) {
   return (
     <>
-      {listData.map((data) => (
-        <PuzzleCard key={data.id} data={data} />
+      {puzzles.map((puzzle) => (
+        <PuzzleCard key={puzzle.id} puzzle={puzzle} />
       ))}
     </>
   );
