@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { PuzzleCardData } from "@/types/puzzleCardTypes";
+import { Puzzle } from "@/types/puzzle";
 
-export default function PuzzleCard({
-  data,
-}: Readonly<{ data: PuzzleCardData }>) {
-  const { id, image, title, size } = data;
-  const [width, height] = size;
+export default function PuzzleCard({ puzzle }: Readonly<{ puzzle: Puzzle }>) {
+  const { id, title, size } = puzzle;
+  const { width, height } = size;
+  const image =
+    puzzle.completed && "solution" in puzzle ? puzzle.solution : "🧩";
 
   return (
     <Link href={`/puzzles/${id}`}>
