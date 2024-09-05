@@ -5,7 +5,7 @@ import PuzzleCardList from "@/components/PuzzleCardList";
 import { Puzzle } from "@/types/puzzle";
 
 export async function getStaticProps() {
-  const filePath = path.join(process.cwd(), "src/data/mock.json");
+  const filePath = path.join(process.cwd(), "src/data/puzzles.json");
   const fileContents = await fs.readFile(filePath, "utf8");
   const data: Puzzle[] = JSON.parse(fileContents);
 
